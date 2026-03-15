@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_newsList"
+            app:destination="@id/newsListFragment" />
+        <action
+            android:id="@+id/action_home_to_source"
+            app:destination="@id/sourceFragment" />
+        <action
+            android:id="@+id/action_home_to_country"
+            app:destination="@id/countryFragment" />
+        <action
+            android:id="@+id/action_home_to_language"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.NewsListFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news_list">
+        <argument
+            android:name="sourceId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="country"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="language"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="query"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sourceFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.SourceFragment"
+        android:label="News Sources"
+        tools:layout="@layout/fragment_source">
+        <action
+            android:id="@+id/action_source_to_newsList"
+            app:destination="@id/newsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.CountryFragment"
+        android:label="Countries"
+        tools:layout="@layout/fragment_country">
+        <action
+            android:id="@+id/action_country_to_newsList"
+            app:destination="@id/newsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.LanguageFragment"
+        android:label="Languages"
+        tools:layout="@layout/fragment_language">
+        <action
+            android:id="@+id/action_language_to_newsList"
+            app:destination="@id/newsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.prianshuparashar.newstime.ui.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+
+</navigation>
