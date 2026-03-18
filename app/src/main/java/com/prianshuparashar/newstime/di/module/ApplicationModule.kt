@@ -1,6 +1,7 @@
 package com.prianshuparashar.newstime.di.module
 
 import android.content.Context
+import androidx.room.Room
 import com.prianshuparashar.newstime.BuildConfig
 import com.prianshuparashar.newstime.NewsApplication
 import com.prianshuparashar.newstime.common.constant.Const
@@ -8,10 +9,13 @@ import com.prianshuparashar.newstime.common.dispatcher.DefaultDispatcherProvider
 import com.prianshuparashar.newstime.common.dispatcher.DispatcherProvider
 import com.prianshuparashar.newstime.common.networkhelper.NetworkHelper
 import com.prianshuparashar.newstime.common.networkhelper.NetworkHelperImpl
+import com.prianshuparashar.newstime.data.database.ArticleDatabase
+import com.prianshuparashar.newstime.data.database.DatabaseService
 import com.prianshuparashar.newstime.data.network.APIKeyInterceptor
 import com.prianshuparashar.newstime.data.network.APIService
 import com.prianshuparashar.newstime.di.qualifiers.ApplicationContext
 import com.prianshuparashar.newstime.di.qualifiers.BaseUrl
+import com.prianshuparashar.newstime.di.qualifiers.DatabaseName
 import com.prianshuparashar.newstime.di.qualifiers.NetworkApiKey
 import dagger.Module
 import dagger.Provides
@@ -88,6 +92,29 @@ class ApplicationModule(private val application: NewsApplication) {
     @Singleton
     @NetworkApiKey
     fun provideApiKey(): String = BuildConfig.API_KEY
+
+    @Provides
+    @Singleton
+    fun provideDatabaseService(database: ArticleDatabase): DatabaseService {
+        return database
+    }
+
+    @Provides
+    @Singleton
+    fun provideArticleDatabase(
+        @ApplicationContext context: Context, @DatabaseName databaseName: String
+    ): ArticleDatabase {
+        return Room.databaseBuilder(
+            context,
+            ArticleDatabase::class.java,
+            databaseName
+        ).fallbackToDestructiveMigration(false).build()
+    }
+
+    @Provides
+    @Singleton
+    @DatabaseName
+    fun provideDatabaseName(): String = Const.DATABASE_NAME
 
     @Provides
     @Singleton

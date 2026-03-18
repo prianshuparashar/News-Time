@@ -21,3 +21,7 @@ annotation class BaseUrl
 @Retention(AnnotationRetention.RUNTIME)
 @Qualifier
 annotation class NetworkApiKey
+
+@Retention(AnnotationRetention.RUNTIME)
+@Qualifier
+annotation class DatabaseName

@@ -80,6 +80,11 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp.logging)
 
+    // Database
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+    implementation(libs.room.ktx)   // Kotlin Extensions and Coroutines support for Room
+
     // Navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
