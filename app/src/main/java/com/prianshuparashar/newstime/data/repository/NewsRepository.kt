@@ -12,6 +12,7 @@ import com.prianshuparashar.newstime.data.mapper.toApiArticles
 import com.prianshuparashar.newstime.data.mapper.toEntities
 import com.prianshuparashar.newstime.data.model.ApiArticle
 import com.prianshuparashar.newstime.data.model.NewsResult
+import com.prianshuparashar.newstime.data.model.Sources
 import com.prianshuparashar.newstime.data.network.APIService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -218,4 +219,13 @@ class NewsRepository @Inject constructor(
         articleDao.deleteByQueryKey(queryKey)
         cacheMetadataDao.deleteMetadata(queryKey)
     }
+
+    fun getSources(
+        country: String? = null,
+        category: String? = null,
+        language: String? = null
+    ): Flow<Sources> = flow {
+        if (!networkHelper.isNetworkConnected()) throw NoInternetException()
+        emit(apiService.getSources(country, category, language))
+    }.flowOn(dispatcherProvider.io)
 }

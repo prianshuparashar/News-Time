@@ -35,10 +35,12 @@ class HomeFragment : Fragment() {
         setupView()
     }
 
-    private fun setupView() {
-        binding.cardTopHeadlines.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_newsList)
-        }
+    private fun setupView() = with(binding) {
+        cardTopHeadlines.setOnClickListener { findNavController().navigate(R.id.action_home_to_newsList) }
+        cardNewsSources.setOnClickListener  { findNavController().navigate(R.id.action_home_to_source) }
+        cardCountries.setOnClickListener    { findNavController().navigate(R.id.action_home_to_country) }
+        cardLanguages.setOnClickListener    { findNavController().navigate(R.id.action_home_to_language) }
+        cardSearch.setOnClickListener       { findNavController().navigate(R.id.action_home_to_search) }
     }
 
     private fun injectDependencies() {

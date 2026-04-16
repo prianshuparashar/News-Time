@@ -26,7 +26,7 @@ import javax.inject.Inject
 /**
  * ViewModel for news-related screens with offline-first pagination support.
  */
-class NewsViewModel @Inject constructor(
+class NewsViewModel(
     private val newsRepository: NewsRepository
 ) : ViewModel() {
 

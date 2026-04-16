@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -49,11 +50,12 @@ class NewsListFragment : Fragment() {
     private var contentSnackBar: Snackbar? = null
 
     // Navigation arguments
-    private var sourceId: String? = null
-    private var country: String? = null
-    private var language: String? = null
-    private var query: String? = null
-    private var title: String? = null
+    private val args: NewsListFragmentArgs by navArgs()
+    private val sourceId get() = args.sourceId
+    private val country get() = args.country
+    private val language get() = args.language
+    private val query get() = args.query
+    private val title get() = args.title
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

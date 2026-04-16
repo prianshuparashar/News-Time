@@ -9,6 +9,7 @@ object Const {
     const val DEFAULT_LANGUAGE = "en"
     const val DEFAULT_COUNTRY = "us"
     const val INITIAL_PAGE = 1
+    const val SELECTED_POSITION_NONE = -1
     const val PAGE_SIZE = 20
     const val ERROR_UNKNOWN = "An unknown error occurred"
     const val ERROR_NO_INTERNET = "No internet connection"

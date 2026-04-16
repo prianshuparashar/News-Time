@@ -117,3 +117,4 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 # Build & Language
 android-application = { id = "com.android.application", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
