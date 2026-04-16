@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <path
+        android:fillColor="@color/shimmer_placeholder"
+        android:pathData="M0,0 L120,0 L120,120 L0,120 Z" />
+
+    <!-- Mountain/landscape -->
+    <path
+        android:fillAlpha="0.4"
+        android:fillColor="@color/text_secondary"
+        android:pathData="M30,80 L45,60 L60,70 L75,50 L90,80 Z" />
+
+    <!-- Sun/circle -->
+    <path
+        android:fillAlpha="0.4"
+        android:fillColor="@color/text_secondary"
+        android:pathData="M66,48 A6,6 0 1,1 66,47.99 Z" />
+
+</vector>
+

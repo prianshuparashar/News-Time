@@ -1,0 +1,16 @@
+package com.prianshuparashar.newstime.ui.viewmodel
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.prianshuparashar.newstime.data.repository.NewsRepository
+
+class NewsViewModelFactory(
+    private val newsRepository: NewsRepository
+) : ViewModelProvider.Factory {
+
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T = when {
+        modelClass.isAssignableFrom(NewsViewModel::class.java)      -> NewsViewModel(newsRepository) as T
+        else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
+    }
+}

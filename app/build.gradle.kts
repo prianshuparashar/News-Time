@@ -89,6 +89,13 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
 
+    // UI Components
+    implementation(libs.swiperefresh)
+    implementation(libs.browser)
+
+    // Image Loading
+    implementation(libs.glide)
+
     // Testing
     testImplementation(libs.junit)
 

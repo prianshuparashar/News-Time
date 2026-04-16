@@ -36,7 +36,7 @@ room = "2.8.4"
 glide = "5.0.5"
 
 # UI Components
-browser = "1.9.0"
+browser = "1.10.0"
 swiperefresh = "1.2.0"
 
 # Navigation

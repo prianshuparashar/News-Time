@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Skeleton loading state - shows multiple skeleton items -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/skeletonContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <include layout="@layout/item_news_skeleton" />
+    <include layout="@layout/item_news_skeleton" />
+    <include layout="@layout/item_news_skeleton" />
+
+</LinearLayout>

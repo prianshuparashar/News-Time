@@ -1,3 +1,77 @@
 <resources>
     <string name="app_name">News Time</string>
+
+    <!-- Content Descriptions -->
+    <string name="news_image">News Image</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search news…</string>
+    <string name="search_start_typing">Start typing to search news…</string>
+    <string name="search_min_characters">Please enter at least 2 characters</string>
+
+    <!-- Errors & Actions -->
+    <string name="error_loading_more">Failed to load more</string>
+    <string name="retry">Retry</string>
+    <string name="new_content_available">New articles available</string>
+    <string name="refresh">Refresh</string>
+
+    <!-- Home Screen -->
+    <string name="home_welcome">Welcome Back</string>
+    <string name="home_discover_news">Discover News</string>
+    <string name="home_top_headlines">Top Headlines</string>
+    <string name="home_top_headlines_subtitle">Breaking news from around the world</string>
+    <string name="home_explore">Explore</string>
+    <string name="home_news_sources">Sources</string>
+    <string name="home_sources_desc">Browse by Publisher</string>
+    <string name="home_sources_browse">Browse by source</string>
+    <string name="home_countries">Countries</string>
+    <string name="home_countries_desc">Browse by Region</string>
+    <string name="home_countries_news_by_country">News by country</string>
+    <string name="home_languages">Languages</string>
+    <string name="home_languages_desc">Browse by Language</string>
+    <string name="home_languages_news_by_language">News by language</string>
+    <string name="home_search">Search</string>
+    <string name="home_search_desc">Find specific news</string>
+
+    <!-- Fragment Titles -->
+    <string name="top_headlines">Top Headlines</string>
+    <string name="search_results">Search Results</string>
+    <string name="source_news">Source News</string>
+    <string name="news_by_language">News by Language</string>
+    <string name="news_by_country">News by Country</string>
+    <string name="news_sources">News Sources</string>
+    <string name="select_news_source">Choose your preferred news publisher</string>
+    <string name="countries">Countries</string>
+    <string name="select_country">Browse news by region</string>
+    <string name="languages">Languages</string>
+    <string name="select_language">Browse news in your language</string>
+    <string name="search">Search News</string>
+    <string name="search_subtitle">Find articles on any topic</string>
+
+    <!-- Empty State -->
+    <string name="empty_emoticon">( .\_.)</string>
+    <string name="empty_nothing_here">Nothing Here</string>
+
+    <!-- Error State -->
+    <string name="error_state">Error</string>
+    <string name="error_something_wrong">Something Went Wrong</string>
+    <string name="error_default_message">Failed to load articles. Please check your internet connection.</string>
+
+    <!-- Screen Titles &amp; Subtitles -->
+    <string name="screen_country_title">Select Country</string>
+    <string name="screen_country_subtitle">Choose a country for top headlines</string>
+    <string name="screen_language_title">Select Language</string>
+    <string name="screen_language_subtitle">Choose a language for top headlines</string>
+    <string name="screen_source_subtitle">Browse articles by source</string>
+
+    <!-- Search Hints -->
+    <string name="search_hint_empty">Start typing to search</string>
+    <string name="search_hint_min_length">Enter at least 2 characters</string>
+    <string name="search_empty_results">No results found for \"%1$s\"</string>
+    <string name="search_empty_articles">No articles found</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_navigate_back">Navigate back</string>
+    <string name="cd_search_icon">Search</string>
+    <string name="cd_empty_state">Empty state</string>
 </resources>

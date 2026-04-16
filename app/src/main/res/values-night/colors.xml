@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_stroke">#1E1E1E</color>
+    <color name="card_ripple">#33FFFFFF</color>
+
+    <color name="icon_accent">#FF385C</color>
+    <color name="featured_card_bg">#FF385C</color>
+    <color name="featured_icon_bg">#FFE5EB</color>
+    <color name="featured_icon_tint">#FF385C</color>
+    <color name="featured_text">#FFFFFF</color>
+    <color name="featured_ripple">#20FFFFFF</color>
+
+    <color name="icon_bg_sources">#FFF3E0</color>
+    <color name="icon_sources">#FF6F00</color>
+
+    <color name="icon_bg_countries">#E0F7FA</color>
+    <color name="icon_countries">#00ACC1</color>
+
+    <color name="icon_bg_languages">#F3E5F5</color>
+    <color name="icon_languages">#8E24AA</color>
+
+    <color name="icon_bg_search">#E8F5E9</color>
+    <color name="icon_search">#43A047</color>
+
+    <color name="background_main">#121212</color>
+    <color name="shimmer_placeholder">#2A2A2A</color>
+</resources>

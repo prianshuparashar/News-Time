@@ -35,35 +35,24 @@ class ApplicationModule(private val application: NewsApplication) {
 
     @Provides
     @Singleton
-    fun provideAPIService(retrofit: Retrofit): APIService {
-        return retrofit.create(APIService::class.java)
-    }
+    fun provideAPIService(retrofit: Retrofit): APIService = retrofit.create(APIService::class.java)
 
     @Provides
     @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient, @BaseUrl baseUrl: String
-    ): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+    ): Retrofit = Retrofit.Builder().baseUrl(baseUrl).client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create()).build()
 
     @Provides
     @Singleton
     fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor, apiKeyInterceptor: APIKeyInterceptor
-    ): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .addInterceptor(apiKeyInterceptor)
+    ): OkHttpClient =
+        OkHttpClient.Builder().addInterceptor(loggingInterceptor).addInterceptor(apiKeyInterceptor)
             .connectTimeout(Const.NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(Const.NETWORK_TIMEOUT, TimeUnit.SECONDS)
-            .writeTimeout(Const.NETWORK_TIMEOUT, TimeUnit.SECONDS)
-            .build()
-    }
+            .writeTimeout(Const.NETWORK_TIMEOUT, TimeUnit.SECONDS).build()
 
     @Provides
     @Singleton
@@ -72,21 +61,18 @@ class ApplicationModule(private val application: NewsApplication) {
 
     @Provides
     @Singleton
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().apply {
-            level = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor.Level.BODY
-            } else {
-                HttpLoggingInterceptor.Level.NONE
-            }
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+        level = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor.Level.BODY
+        } else {
+            HttpLoggingInterceptor.Level.NONE
         }
     }
 
     @Provides
     @Singleton
-    fun provideAPIKeyInterceptor(@NetworkApiKey apiKey: String): APIKeyInterceptor {
-        return APIKeyInterceptor(apiKey)
-    }
+    fun provideAPIKeyInterceptor(@NetworkApiKey apiKey: String): APIKeyInterceptor =
+        APIKeyInterceptor(apiKey)
 
     @Provides
     @Singleton
@@ -95,21 +81,14 @@ class ApplicationModule(private val application: NewsApplication) {
 
     @Provides
     @Singleton
-    fun provideDatabaseService(database: ArticleDatabase): DatabaseService {
-        return database
-    }
+    fun provideDatabaseService(database: ArticleDatabase): DatabaseService = database
 
     @Provides
     @Singleton
     fun provideArticleDatabase(
         @ApplicationContext context: Context, @DatabaseName databaseName: String
-    ): ArticleDatabase {
-        return Room.databaseBuilder(
-            context,
-            ArticleDatabase::class.java,
-            databaseName
-        ).fallbackToDestructiveMigration(false).build()
-    }
+    ): ArticleDatabase = Room.databaseBuilder(context, ArticleDatabase::class.java, databaseName)
+        .fallbackToDestructiveMigration(false).build()
 
     @Provides
     @Singleton
@@ -118,13 +97,11 @@ class ApplicationModule(private val application: NewsApplication) {
 
     @Provides
     @Singleton
-    fun provideNetworkHelper(networkHelperImpl: NetworkHelperImpl): NetworkHelper {
-        return networkHelperImpl
-    }
+    fun provideNetworkHelper(networkHelperImpl: NetworkHelperImpl): NetworkHelper =
+        networkHelperImpl
 
     @Provides
     @Singleton
-    fun provideDispatcherProvider(defaultDispatcherProvider: DefaultDispatcherProvider): DispatcherProvider {
-        return defaultDispatcherProvider
-    }
+    fun provideDispatcherProvider(defaultDispatcherProvider: DefaultDispatcherProvider): DispatcherProvider =
+        defaultDispatcherProvider
 }
