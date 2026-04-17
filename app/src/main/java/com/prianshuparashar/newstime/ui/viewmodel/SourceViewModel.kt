@@ -39,7 +39,7 @@ class SourceViewModel(
         }
     }
 
-    fun onSourceClicked(source: ApiSource) {
+    fun onSourceSelected(source: ApiSource) {
         val id = source.id ?: return
         viewModelScope.launch {
             _events.emit(UIEvent.NavigateToArticles(id, source.name))

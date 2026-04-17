@@ -55,11 +55,13 @@ class SourceFragment : Fragment() {
 
     private fun setupView() {
         sourceViewModel = viewModelProvider[SourceViewModel::class.java]
-        sourceAdapter = SourceAdapter(sourceViewModel::onSourceClicked)
+        sourceAdapter = SourceAdapter(sourceViewModel::onSourceSelected)
 
         with(binding) {
-            recyclerViewSources.layoutManager = LinearLayoutManager(requireContext())
-            recyclerViewSources.adapter = sourceAdapter
+            recyclerViewSources.apply {
+                layoutManager = LinearLayoutManager(requireContext())
+                adapter = sourceAdapter
+            }
         }
 
         sourceViewModel.fetchSources()

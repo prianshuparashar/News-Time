@@ -12,6 +12,7 @@ class NewsViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T = when {
         modelClass.isAssignableFrom(NewsViewModel::class.java)      -> NewsViewModel(newsRepository) as T
         modelClass.isAssignableFrom(SourceViewModel::class.java)    -> SourceViewModel(newsRepository) as T
+        modelClass.isAssignableFrom(LanguageViewModel::class.java)  -> LanguageViewModel() as T
         else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
 }
