@@ -1,6 +1,7 @@
 package com.prianshuparashar.newstime.ui.adapter
 
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.prianshuparashar.newstime.common.constant.Const
 import com.prianshuparashar.newstime.data.model.Country
 import com.prianshuparashar.newstime.databinding.ItemCountryBinding
@@ -30,7 +31,7 @@ class CountryAdapter(
 
     inner class CountryViewHolder(
         private val binding: ItemCountryBinding
-    ) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(country: Country, isSelected: Boolean) = with(binding) {
             root.isSelected = isSelected

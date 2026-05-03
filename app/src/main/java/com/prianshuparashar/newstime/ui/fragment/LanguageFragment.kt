@@ -101,4 +101,9 @@ class LanguageFragment : Fragment() {
             .build()
             .inject(this)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
