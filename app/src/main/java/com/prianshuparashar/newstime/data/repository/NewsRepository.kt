@@ -150,7 +150,7 @@ class NewsRepository @Inject constructor(
         language: String? = Const.DEFAULT_LANGUAGE,
         page: Int = Const.INITIAL_PAGE,
         pageSize: Int
-    ): Flow<NewsResult> = flow<NewsResult> {
+    ): Flow<NewsResult> = flow {
         val queryKey = generateQueryKey(
             category = CacheCategory.SEARCH,
             query = query,

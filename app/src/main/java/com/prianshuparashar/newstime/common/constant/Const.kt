@@ -19,6 +19,5 @@ object Const {
 
     object Cache {
         const val EXPIRY_MINUTES = 30L
-        const val CLEANUP_DAYS = 7L
     }
 }

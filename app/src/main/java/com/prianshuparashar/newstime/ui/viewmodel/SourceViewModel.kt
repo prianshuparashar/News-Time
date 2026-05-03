@@ -29,13 +29,13 @@ class SourceViewModel(
         _sourceState.value = UIState.Loading
 
         viewModelScope.launch {
-            newsRepository.getSources()
-                .catch { exception ->
-                    _sourceState.value = UIState.Error(exception.message ?: Const.ERROR_UNKNOWN)
-                }
-                .collect { sources ->
+            try {
+                newsRepository.getSources().collect { sources ->
                     _sourceState.value = UIState.Success(sources.sources)
                 }
+            } catch (exception: Exception) {
+                _sourceState.value = UIState.Error(exception.message ?: Const.ERROR_UNKNOWN)
+            }
         }
     }
 
